@@ -1,0 +1,14 @@
+/**
+ * Permet de récupère de code hexa ou rgba d'une couleur
+ * 
+ * @param $color La couleur à utiliser, ex: $blue | $green
+ * @param $value La valeur, qui représente une nuance de la couleur, ex: '50', '100', ..., '900'
+ * @param $alpha L'opacité de la couleur, ex: 0.5, .5, 0.8, .8
+ * Si la param $aplha est renseigné, la couleur sera en rgba
+ */
+fcolor($color, $value = '400', $alpha = 1)
+    if $alpha != 1
+        $val = $color[$value]
+        return alpha($val, $alpha)
+
+    return $color[$value]

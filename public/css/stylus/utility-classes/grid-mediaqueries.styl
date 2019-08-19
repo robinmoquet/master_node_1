@@ -1,0 +1,16 @@
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+
+$prefix = 'w-'
+
+for $breakpoint in $breakpoints
+    +breakpoint($ + $breakpoint)
+        for $i in $widthPercentage
+            for $y in 1..$i
+                $class = '.' + $breakpoint + '\:' + $prefix + $y + '\/' + $i
+                {$class}
+                    width: (100 / $i) * $y + '%'

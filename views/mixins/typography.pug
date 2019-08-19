@@ -1,0 +1,10 @@
+mixin title(text, type)
+    case type
+        when 'primary'
+            h1.m-5= text
+        when 'secondary'
+            h2.m-5= text
+        when 'subtitle'
+            h4.m-5= text
+        default
+            h2.m-5= text

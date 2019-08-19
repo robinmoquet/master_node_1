@@ -1,0 +1,9 @@
+mixin form-block(label)
+    div
+        block
+
+mixin label(text)
+    label= text
+
+mixin input(name, type = 'text', placeholder = '')
+    input(name=name type=type placeholder=placeholder)

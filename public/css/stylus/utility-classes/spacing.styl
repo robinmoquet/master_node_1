@@ -1,0 +1,49 @@
+/**
+* Creer les classes utilitaires relative au margin et au padding
+*
+* Ex :
+* .m-1 => margin: 10px
+* .p-2 => padding: 20px
+* .m-10 => margin: 100px | .p-10: => padding: 100px
+*
+* .m-[value] La value représente le nombres de px multiplier par 10, la value max est 10 soit 100px
+* .mr-[value] La class .mr- indique que c'est un margin-right, idem pour .mb, .mt, .ml
+* .mx-[value] => margin-right & margin-left, place les marges à droit et à gauche
+* .my-[value] => margin-top & margin-bottom, place les marges en haut et en bas
+*
+* Tous ce qui est expliquer pour les margin est identique pour les padding
+* .p-[value], .py, .px, .pb, .pt, .pr, .pl
+*
+* Le seul exception est pour mx-auto => margin-right: auto; margin-left: auto;
+*
+*/
+
+$prefixSpacing = {
+    m: margin,
+    mx: margin-left margin-right,
+    my: margin-top margin-bottom,
+    mt: margin-top,
+    mb: margin-bottom,
+    ml: margin-left,
+    mr: margin-right,
+    p: padding,
+    px: padding-left padding-right,
+    py: padding-top padding-bottom,
+    pt: padding-top,
+    pb: padding-bottom,
+    pl: padding-left,
+    pr: padding-right,
+}
+
+for $prefix, $properties in $prefixSpacing 
+  for $i in $numbersForSpacing
+    $class = '.' + $prefix + '-' + $i
+    $value = spacing($i * 2)
+
+    {$class}
+      for $property in $properties
+        {$property}: $value
+
+.mx-auto 
+  margin-right auto
+  margin-left auto

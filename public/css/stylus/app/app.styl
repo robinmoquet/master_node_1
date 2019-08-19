@@ -1,0 +1,25 @@
+/**
+ * 
+ * Vos régles css doivent être ecrite dans ce fichier.
+ * 
+ * Vous pouvez évidement creer plusieurs fichiers ou même
+ * plusieurs répèrtoires, il suffira des les inclure dans
+ * ce fichier, qui et lui même déjà inclus dans main.styl.
+ * 
+ */
+
+
+
+div > div
+    // padding: spacing(4)
+    text-align: center
+    color: fcolor($grey, '400')
+
+    > div 
+        // margin: spacing() spacing(4)
+        background-color: fcolor($red, '400')
+
+    +breakpoint($lg)
+        color: fcolor($blue)
+
+    

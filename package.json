@@ -1,0 +1,19 @@
+{
+  "name": "c1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "css-compile": "stylus ./public/css/stylus/main.styl --include ./public/css/stylus --out ./public/css/dist --watch --compress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.5"
+  }
+}
