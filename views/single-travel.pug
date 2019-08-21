@@ -1,0 +1,8 @@
+extend layout.pug
+
+block body
+    h2(class="font-bold text-5xl text-center my-16")= travel.title
+
+    div(class="mx-2 md:mx-16 flex")
+        div(class="w-full md:w-2/3")= travel.desc
+        +sidebar(travel)

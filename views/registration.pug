@@ -1,0 +1,20 @@
+extend layout.pug
+
+block body
+    +card()
+        +title('Creer son compte', 'secondary')
+
+        form(action="", method='post')
+            +form-block()
+                +label('Votre nom :')
+                +input('lastname', 'Nemo')
+            +form-block()
+                +label('Votre prénom :')
+                +input('firstname', 'Demo')
+            +form-block()
+                +label('Votre email :')
+                +input('email', 'demo-nemo@email.com')
+            +form-block()
+                +label('Votre mot de passe :')
+                +input('password', '*********', 'password')
+            +button('S\'inscrire', 'submit')

@@ -1,0 +1,14 @@
+div(class="p-4 bg-gray-900 flex justify-between")
+    +link(url('home'))
+        if (user !== undefined)
+            h5(class="text-white font-bold text-lg") Hello, #{user.firstname} !
+        else
+            h5(class="text-white font-bold text-lg") Hello, toi !
+    div(class="flex justify-center")
+        if (user !== undefined)
+            +link(url('travels'), 'Nos voyages')(class="mr-4")
+            +link(url('profile'), 'Mon compte')(class="mr-4")
+            +link(url('logout'), 'Se déconnecter')
+        else
+            +link(url('registration'), 'S\'inscrire')(class="mr-4")
+            +link(url('login'), 'Se connecter')

@@ -1,10 +1,12 @@
 mixin title(text, type)
     case type
         when 'primary'
-            h1.m-5= text
+            h1.my-5.primary-title= text
         when 'secondary'
-            h2.m-5= text
+            h2(
+                class=`text-blue-400 mb-4 text-2xl text-center font-bold ${attributes.class}`
+            )= text
         when 'subtitle'
-            h4.m-5= text
+            h4(class!=`subtitle ${attributes.class}`)!= text
         default
-            h2.m-5= text
+            h2.my-5= text

@@ -4,8 +4,11 @@ block title
     title AAHH
 
 block body
-    +title('Hello PUG & mixins !', 'primary')
+    div.wrapper
+        +title('Hello PUG & mixins', 'primary')
 
-    +form-block('test :')
-        +label('blabla: ')
-        +input('name')
+        +card()
+            +title('Une nouvelle manière de <span>communiquer</span> !', 'subtitle')(class="mb-5")
+            +form-block('test :')
+                +label('blabla: ')
+                +input('name')

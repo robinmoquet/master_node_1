@@ -1,0 +1,16 @@
+extend layout.pug
+
+block body
+    +card()
+        +title('Se connecter', 'secondary')
+
+        form(action="", method='post')
+            +form-block()
+                +label('Votre email :')
+                +input('username', 'demo-nemo@email.com')
+            +form-block()
+                +label('Votre mot de passe :')
+                +input('password', '*********', 'password')
+            p= errors
+            +button('S\'inscrire', 'submit')
+            +link(url('loginFacebook'), 'ou via Facebook')(class="mt-4 text-center block")

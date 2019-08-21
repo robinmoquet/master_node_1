@@ -1,0 +1,42 @@
+mixin travel(imgUrl)
+    div(class="px-4 py-8 w-full md:w-1/3 js-block-travel")
+        div(class="shadow-lg rounded-lg overflow-hidden")
+            img(class="w-full" src=imgUrl)
+            div(class="p-4")
+                block
+
+mixin title-travel(title)
+    h3(
+        class=`font-bold text-xl text-blue-400 text-center mb-4 title-travel ${attributes.class}`
+        )= title
+
+mixin button-travel(href, text = '')
+    a(
+        href=href
+        class=`bg-blue-400 block text-center rounded w-full p-2 mt-4 text-white ${attributes.class}`
+        )= text
+
+mixin summary(desc)
+    - summary = desc.slice(0, 180) + ' ...';
+    p(class="text-gray-600")= summary
+
+mixin sidebar(travel)
+    div(class="w-full md:w-1/3 rounded-lg shadow-lg bg-blue-200 p-8 ml-8")
+        h4(class="text-center font-bold text-xl mb-8 text-blue-600") Caractèristiques
+        +spec('Nombre de participant max :', travel.nb_places)
+        +spec('Nombre de places disponible :', travel.places_available)
+        - var startTo = new Date(travel.startTo);
+        - var startToFormat = filters.formatDate(startTo);
+        +spec('Date de départ :', startToFormat)
+        +spec('Date de retoure :', filters.formatDate(new Date(travel.endTo)))
+        +price(travel.price)
+        +button('Commander')
+
+mixin spec(text, value)
+    div(class="mb-4")
+        p(class="flex justify-between")
+            span= text
+            span(class="")= value
+
+mixin price(price)
+        p(class="text-center font-bold text-orange-400 text-xl mt-8 mb-4")= 'À partir de ' + price + ' €'

@@ -1,0 +1,17 @@
+extend layout.pug
+
+block body
+    h2(class="font-bold text-5xl text-center my-16") Tous les voyage disponible
+
+    div(class="pr-4 flex items-end justify-end mx-2 md:mx-16")
+        div(class="")
+            +form-block()
+                +label('Recherche')
+                +input('search')(class="search")
+
+    div(class="mx-2 md:mx-16 flex flex-wrap")
+        each travel in travels
+            +travel(travel.img)
+                +title-travel(travel.title)
+                +summary(travel.desc)
+                +button-travel(url('travel', {id: travel.id}), 'Voir plus ...')
